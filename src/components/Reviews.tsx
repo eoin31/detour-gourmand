@@ -3,6 +3,9 @@ import { Star, Quote } from 'lucide-react';
 import { reviews } from '@/data/content';
 
 export default function Reviews() {
+  const avgRating =
+    reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
+
   return (
     <section id="avis" className="bg-cream-200 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -17,6 +20,25 @@ export default function Reviews() {
           <h2 className="mt-2 font-heading text-4xl font-bold text-stone-900 sm:text-5xl">
             Avis de nos clients
           </h2>
+
+          {/* Rating summary badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-6 inline-flex items-center gap-3 rounded-full bg-gold-400/15 px-5 py-3"
+          >
+            <div className="flex items-center gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-5 w-5 fill-gold-400 text-gold-400" />
+              ))}
+            </div>
+            <span className="font-heading text-lg font-bold text-stone-900">
+              {avgRating.toFixed(1)} / 5
+            </span>
+            <span className="text-sm text-stone-500">· {reviews.length} avis</span>
+          </motion.div>
         </motion.div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -35,7 +57,7 @@ export default function Reviews() {
                   <Star key={s} className="h-5 w-5 fill-gold-400 text-gold-400" />
                 ))}
               </div>
-              <blockquote className="mt-4 text-base leading-relaxed text-stone-700">
+              <blockquote className="mt-4 text-sm leading-relaxed text-stone-700">
                 « {review.text} »
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">

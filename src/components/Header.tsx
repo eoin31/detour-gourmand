@@ -7,6 +7,7 @@ const navLinks = [
   { href: '#accueil', label: 'Accueil' },
   { href: '#produits', label: 'Nos produits' },
   { href: '#savoir-faire', label: 'À propos' },
+  { href: '#avis', label: 'Avis' },
   { href: '#contact', label: 'Contact' },
 ];
 

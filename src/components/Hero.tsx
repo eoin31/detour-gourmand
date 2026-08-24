@@ -27,7 +27,7 @@ export default function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold-300/40 bg-gold-300/10 px-4 py-2 text-sm font-medium text-gold-300 backdrop-blur-sm"
         >
           <Sparkles className="h-4 w-4" />
-          Boulangerie & Pâtisserie artisanale
+          Boulangerie artisanale à Toulouse
         </motion.div>
 
         <motion.h1
@@ -47,8 +47,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.6 }}
           className="mx-auto mt-6 max-w-2xl text-lg text-cream-200 sm:text-xl"
         >
-          Pains au levain, viennoiseries au beurre et pâtisseries de saison —
-          préparés chaque jour dans notre atelier avec des ingrédients soigneusement sélectionnés.
+          Boulangerie artisanale à Toulouse. Pains au levain, petit épeautre,
+          viennoiseries au beurre et pâtisseries de saison — préparés chaque jour avec passion.
         </motion.p>
 
         <motion.div

@@ -1,6 +1,5 @@
 // ============================================================================
-//  CONTENU DU SITE — tous les placeholders à remplir avec les infos du client
-//  Aucune information factuelle n'est inventée : tout est entre crochets.
+//  CONTENU DU SITE — Détour gourmand
 // ============================================================================
 
 export interface Review {
@@ -12,70 +11,49 @@ export interface Review {
 
 export const reviews: Review[] = [
   {
-    name: '[NOM CLIENT 1]',
-    initials: 'NC',
+    name: 'L. Maury',
+    initials: 'LM',
     rating: 5,
-    text: '[AVIS CLIENT RÉEL — à remplacer par le témoignage d\'un client]',
+    text: "Une vraie boulangerie d'artisan, et non une chaîne comme partout. Le pain est bon mais je viens principalement pour le petit épeautre qui est excellent. Les pâtisseries sont franchement bonnes et hyper accessibles en terme de prix. Très facile de se garer. Petit bonus avec les huîtres direct producteur le dimanche matin.",
   },
   {
-    name: '[NOM CLIENT 2]',
-    initials: 'NC',
+    name: 'Kris Minier',
+    initials: 'KM',
     rating: 5,
-    text: '[AVIS CLIENT RÉEL — à remplacer par le témoignage d\'un client]',
+    text: "L'accueil, les produits pour nous la bûche pomme caramel une tuerie, les pains seigle, petit épeautre aux graines et pain aux figues tout simplement délicieux ! Nous recommandons vivement cette boulangerie artisanale.",
   },
   {
-    name: '[NOM CLIENT 3]',
-    initials: 'NC',
+    name: 'Leila Krishpulls',
+    initials: 'LK',
     rating: 5,
-    text: '[AVIS CLIENT RÉEL — à remplacer par le témoignage d\'un client]',
+    text: "Personnel très accueillant et souriant. Le pain est délicieux, le café aussi. Il y a une petite terrasse sympa et on peut manger à l'intérieur s'il fait froid.",
   },
 ];
 
 export interface HoursDay {
   day: string;
   hours: string;
+  closed?: boolean;
 }
 
 export const hours: HoursDay[] = [
-  { day: 'Lundi', hours: '[HH:HH – HH:HH]' },
-  { day: 'Mardi', hours: '[HH:HH – HH:HH]' },
-  { day: 'Mercredi', hours: '[HH:HH – HH:HH]' },
-  { day: 'Jeudi', hours: '[HH:HH – HH:HH]' },
-  { day: 'Vendredi', hours: '[HH:HH – HH:HH]' },
-  { day: 'Samedi', hours: '[HH:HH – HH:HH]' },
-  { day: 'Dimanche', hours: '[HH:HH – HH:HH]' },
+  { day: 'Lundi', hours: 'Fermé', closed: true },
+  { day: 'Mardi', hours: '6h45 – 13h30  ·  17h – 19h' },
+  { day: 'Mercredi', hours: '6h45 – 13h30  ·  17h – 19h' },
+  { day: 'Jeudi', hours: '6h45 – 13h30  ·  17h – 19h' },
+  { day: 'Vendredi', hours: '6h45 – 13h30  ·  17h – 19h' },
+  { day: 'Samedi', hours: '7h – 13h' },
+  { day: 'Dimanche', hours: '7h – 13h' },
 ];
 
 export const contactInfo = {
-  bakeryName: '[NOM DE LA BOULANGERIE]',
-  address: '[ADRESSE POSTALE COMPLÈTE — N°, rue, code postal, ville]',
-  phone: '[TÉLÉPHONE]',
-  email: '[EMAIL DE CONTACT]',
-  social: {
-    instagram: '#',
-    facebook: '#',
-  },
-  // Remplacez par les coordonnées réelles pour centrer la carte
-  mapQuery: 'boulangerie+patisserie',
+  bakeryName: 'Détour gourmand',
+  address: '80 Bd Deltour, 31500 Toulouse',
+  phone: '05 61 80 92 38',
+  email: 'dgourmand31@gmail.com',
+  // Carte Google Maps centrée sur 80 Bd Deltour, 31500 Toulouse
   mapEmbed:
-    'https://www.openstreetmap.org/export/embed.html?bbox=2.330%2C48.860%2C2.370%2C48.875&layer=mapnik&marker=48.8675,2.3628',
-};
-
-// ============================================================================
-//  MENTIONS LÉGALES — conformes aux obligations françaises
-// ============================================================================
-
-export const legalInfo = {
-  editorName: '[NOM DU DIRECTEUR DE LA PUBLICATION]',
-  editorRole: '[FONCTION — ex : Gérant de la société]',
-  companyName: '[RAISON SOCIALE — ex : SARL [NOM DE LA BOULANGERIE]]',
-  legalForm: '[FORME JURIDIQUE — ex : SARL / SAS / EI]',
-  siret: '[SIRET — 14 chiffres]',
-  rcs: '[VILLE DU RCS] RCS [NUMÉRO RCS]',
-  vatNumber: '[NUMÉRO DE TVA INTRACOMMUNAUTAIRE]',
-  registeredOffice: '[ADRESSE DU SIÈGE SOCIAL]',
-  shareCapital: '[MONTANT DU CAPITAL SOCIAL]',
-  hostName: '[NOM DE L\'HÉBERGEUR — ex : Bolt / OVH / Hostinger]',
-  hostAddress: '[ADRESSE DE L\'HÉBERGEUR]',
-  hostPhone: '[TÉLÉPHONE DE L\'HÉBERGEUR]',
+    'https://www.google.com/maps?q=80+Boulevard+Deltour,+31500+Toulouse&output=embed',
+  mapLink:
+    'https://www.google.com/maps/dir/?api=1&destination=80+Boulevard+Deltour,+31500+Toulouse',
 };

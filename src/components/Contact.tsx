@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Navigation } from 'lucide-react';
 import { contactInfo, hours } from '@/data/content';
 
 export default function Contact() {
@@ -34,9 +34,18 @@ export default function Contact() {
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-ember-500/10 text-ember-500">
                   <MapPin className="h-6 w-6" />
                 </span>
-                <div>
+                <div className="flex-1">
                   <h3 className="font-heading text-xl font-bold text-stone-900">Adresse</h3>
                   <p className="mt-1 text-stone-600">{contactInfo.address}</p>
+                  <a
+                    href={contactInfo.mapLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-2 text-sm font-medium text-ember-500 hover:text-ember-600"
+                  >
+                    <Navigation className="h-4 w-4" />
+                    Obtenir l'itinéraire
+                  </a>
                 </div>
               </div>
             </div>
@@ -81,28 +90,16 @@ export default function Contact() {
                 {hours.map((h) => (
                   <li key={h.day} className="flex items-center justify-between py-2.5">
                     <span className="text-sm font-medium text-stone-700">{h.day}</span>
-                    <span className="text-sm text-stone-500">{h.hours}</span>
+                    <span
+                      className={`text-sm ${
+                        h.closed ? 'font-medium text-ember-500' : 'text-stone-500'
+                      }`}
+                    >
+                      {h.hours}
+                    </span>
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Social */}
-            <div className="flex items-center gap-3">
-              <a
-                href={contactInfo.social.instagram}
-                className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brown-600 text-cream-50 transition-all duration-300 hover:bg-brown-700 hover:scale-105"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href={contactInfo.social.facebook}
-                className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brown-600 text-cream-50 transition-all duration-300 hover:bg-brown-700 hover:scale-105"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
             </div>
           </motion.div>
 
@@ -115,7 +112,7 @@ export default function Contact() {
             className="overflow-hidden rounded-3xl shadow-lg ring-1 ring-stone-900/10 lg:min-h-[500px]"
           >
             <iframe
-              title="Carte — [NOM DE LA BOULANGERIE]"
+              title="Carte — Détour gourmand"
               src={contactInfo.mapEmbed}
               className="h-full min-h-[400px] w-full border-0"
               loading="lazy"
